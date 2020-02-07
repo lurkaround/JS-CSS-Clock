@@ -7,7 +7,9 @@ function setDate() {
 
     const seconds = now.getSeconds();
     const secondsDegrees = ((seconds/60) * 360) + 90;
+
     secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+    secondHand.style.transition = "none";
 
     const mins = now.getMinutes();
     const minsDegrees = ((mins/60) * 360) + 90;
@@ -17,5 +19,6 @@ function setDate() {
     const hoursDegrees = ((hours/12) * 360) +90;
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 };
+
 
 setInterval(setDate, 1000);
